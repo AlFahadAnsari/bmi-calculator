@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        *{
+            text-transform: capitalize;
+           
+        }
+        body{
+            padding: 40px;
+        }
+
+        .main{
+          
+            width: 350px;
+            height: auto;
+            padding: 20px;
+          border-radius: 20px;
+          box-shadow: 0.5px 0.5px 0.5px 2px rgb(29, 19, 19);
+            position: absolute;
+            top: 30%;
+            left: 38%;
+
+        }
+        label{
+            display: block;
+            text-align: center;
+            line-height: 150%;
+            font-size: .85em;
+        }
+
+        .container{
+           margin-right : 35px;
+        }
+
+        input{
+            
+            width: 100%;
+            padding: 10px;
+        }
+
+        h1{
+            text-align: center;
+        }
+
+        button{
+            width: 100%;
+            padding: 10px;
+            background-color: green;
+            outline: none;
+            border: none;
+            margin-left: 17x;
+            color: white;
+            margin: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="main">
+
+            <div class="container">
+
+                <h1>BMI CLACULATOR</h1>
+
+                <label for="">weight (kg):</label> 
+                <input type="number" name="" id="we" placeholder="enter your weight"> <br> <br>
+
+                
+                <label for="">height (cm):</label> 
+                <input type="number" name="" id="he" placeholder="enter your height">
+                <br><br>
+                <button onclick="chnage()">calculat bmi</button> 
+
+                <h3 id="show"></h3>
+            </div>
+
+    </div>
+
+
+    <script>
+
+        function chnage(){
+        
+        let we = document.getElementById("we").value;
+        let he = document.getElementById("he").value;
+
+        let bmi = (we /((he /100) * (he /100))).toFixed(2);
+
+        let result = "your bmi is : " + bmi;
+
+        if(bmi < 18.5){
+            result+="(under weight)";
+        }else if(bmi>18.5 && bmi<25){
+            result +="(normal weight)"
+        }else if(bmi>25 && bmi<30){
+            result+="(over weight)"
+        }else{
+            result +="(obse)"
+        }
+
+        document.getElementById("show").innerHTML=result
+
+        }
+
+    </script>
+
+</body>
+</html>
